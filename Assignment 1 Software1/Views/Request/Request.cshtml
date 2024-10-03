@@ -1,0 +1,33 @@
+﻿@model IEnumerable<Assignment1EnterpriseSoftware.Models.Request>
+
+<h2>Requests List</h2>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Phone</th>
+            <th>Role</th>
+            <th>Equipment</th>
+            <th>Duration</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var request in Model)
+        {
+            <tr>
+                <td>@request.Name</td>
+                <td>@request.Email</td>
+                <td>@request.Phone</td>
+                <td>@request.Role</td>
+                <td>@request.EquipmentType.ToString()</td>
+                <td>@request.Duration</td>
+                <td>
+                    <button class="btn btn-success">Accept</button>
+                    <button class="btn btn-danger">Deny</button>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
